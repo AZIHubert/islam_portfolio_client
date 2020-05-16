@@ -43,6 +43,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default ({theme}) => {
+    const numToDisplay = 3.2;
     const classes = useStyles(theme);
     const displayedWorks = DUMMY_WORKS
         .filter(work => work.highlight.active)
@@ -54,7 +55,7 @@ export default ({theme}) => {
     };
     const nextSlide = () => {
         setCurrentInView(prevState => {
-            let currents = 3.2 + prevState;
+            let currents = numToDisplay + prevState;
             if(currents + 1 > displayedWorks.length){
                 return displayedWorks.length - currents;
             } else {
@@ -65,7 +66,7 @@ export default ({theme}) => {
     const prevSlide = () => {
         setCurrentInView(prevState => {
             if(!prevState){
-                return displayedWorks.length - 3.2;
+                return displayedWorks.length - numToDisplay;
             }
             if(prevState - 1 < 0){
                 return 0;
@@ -80,7 +81,7 @@ export default ({theme}) => {
             position='relative'
         >
             <Carousel
-                slidesToShow={3.2}
+                slidesToShow={numToDisplay}
                 withoutControls
                 slideIndex={currentInView}
                 afterSlide={prevState => console.log(prevState)}
