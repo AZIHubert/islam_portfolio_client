@@ -49,15 +49,16 @@ export default ({theme}) => {
         .filter(work => work.highlight.active)
         .sort((a, b) => a.highlight.index - b.highlight.index);
     const [currentInView, setCurrentInView] = useState(0);
-    const [isFirst, setIsFirst] = useState(true);
     const getType = typeId => {
         return DUMMY_TYPES.find(type => type._id === typeId).title
     };
     const nextSlide = () => {
         setCurrentInView(prevState => {
             let currents = numToDisplay + prevState;
+            if(prevState === displayedWorks.length - numToDisplay)
+                return 0;
             if(currents + 1 > displayedWorks.length){
-                return displayedWorks.length - currents;
+                return displayedWorks.length - numToDisplay;
             } else {
                 return prevState += 1;
             }
@@ -84,7 +85,6 @@ export default ({theme}) => {
                 slidesToShow={numToDisplay}
                 withoutControls
                 slideIndex={currentInView}
-                afterSlide={prevState => console.log(prevState)}
                 disableEdgeSwiping
             >
                 {displayedWorks.map((work, i) => 

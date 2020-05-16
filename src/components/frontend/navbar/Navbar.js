@@ -131,8 +131,9 @@ export default ({theme}) => {
                         <a
                             href={linkedin.link}
                             target="_blank"
+                            rel="noopener noreferrer"
                         >
-                            IN
+                            LI
                         </a>
                     </li>
                 )}
@@ -142,8 +143,9 @@ export default ({theme}) => {
                         <a
                             href={instagram.link}
                             target="_blank"
+                            rel="noopener noreferrer"
                         >
-                            instagram
+                            INS
                         </a>
                     )}
                 </li>
@@ -152,8 +154,9 @@ export default ({theme}) => {
                         <a
                             href={pinterest.link}
                             target="_blank"
+                            rel="noopener noreferrer"
                         >
-                            pinterest
+                            PINT
                         </a>
                     )}
                 </li>

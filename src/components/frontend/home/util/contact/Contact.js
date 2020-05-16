@@ -19,7 +19,6 @@ export default () => {
             <Box
                 display="flex"
                 position="relative"
-                display="flex"
                 height={75}
                 alignItems="center"
             >
