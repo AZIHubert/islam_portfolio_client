@@ -45,7 +45,6 @@ export default ({
         <Carousel
             afterSlide={prevState => setCurrentInView(prevState)}
             slideIndex={currentInView}
-            wrapAround
             withoutControls
         >
             {thumbnailsURL.map((thumbnailUrl, i) => (

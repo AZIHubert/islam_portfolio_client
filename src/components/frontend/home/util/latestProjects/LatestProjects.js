@@ -44,12 +44,15 @@ export default ({theme}) => {
     const classes = useStyles(theme)
     const {latestProjectsNum} = DUMMY_GENERAL;
     const latestPojects = DUMMY_WORKS.slice(0, latestProjectsNum);
+    const latestPojectsLength = latestPojects.length;
     const [currentInView, setCurrentInView] = useState(0);
     const handleClickNext = () => {
-        setCurrentInView(prevState => (prevState + 1)%latestProjectsNum)
+        if(currentInView < latestPojectsLength - 1)
+            setCurrentInView(prevState => (prevState + 1)%latestProjectsNum)
     }
     const handleClickPrev = () => {
-        setCurrentInView(prevState => (prevState - 1 + latestProjectsNum)%latestProjectsNum)
+        if(currentInView > 0)
+            setCurrentInView(prevState => (prevState - 1 + latestProjectsNum)%latestProjectsNum)
     }
     
     return (
@@ -88,17 +91,30 @@ export default ({theme}) => {
                 <Box
                     display="flex"
                     alignItems="center"
+                    justifyContent={
+                        currentInView === 0 ?
+                            'flex-end'
+                        : currentInView === latestPojectsLength - 1 ?
+                            'flex-start' :
+                            'space-between'
+                    }
+                    minWidth={75}
                 >
-                    <button
-                        onClick={handleClickPrev}
-                        className={`${classes.previewArrow} ${classes.arrow}`}
-                    >
-                    </button>
-                    <button
-                        onClick={handleClickNext}
-                        className={classes.arrow}
-                    >
-                    </button>
+                    {currentInView > 0 && (
+                        <button
+                            onClick={handleClickPrev}
+                            className={`${classes.arrow}`}
+                        >
+                        </button>
+                    
+                    )}
+                    {currentInView < latestPojectsLength - 1 && (
+                        <button
+                            onClick={handleClickNext}
+                            className={classes.arrow}
+                        >
+                        </button>
+                    )}
                 </Box>
             </Box>
         </HomeSubContainer>
