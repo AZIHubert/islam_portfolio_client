@@ -48,11 +48,13 @@ export default ({theme}) => {
     const [currentInView, setCurrentInView] = useState(0);
     const handleClickNext = () => {
         if(currentInView < latestPojectsLength - 1)
-            setCurrentInView(prevState => (prevState + 1)%latestProjectsNum)
+            setCurrentInView(prevState => (prevState + 1)%latestProjectsNum);
+        else setCurrentInView(0);
     }
     const handleClickPrev = () => {
         if(currentInView > 0)
-            setCurrentInView(prevState => (prevState - 1 + latestProjectsNum)%latestProjectsNum)
+            setCurrentInView(prevState => (prevState - 1 + latestProjectsNum)%latestProjectsNum);
+        else setCurrentInView(latestPojectsLength - 1);
     }
     
     return (
@@ -91,30 +93,19 @@ export default ({theme}) => {
                 <Box
                     display="flex"
                     alignItems="center"
-                    justifyContent={
-                        currentInView === 0 ?
-                            'flex-end'
-                        : currentInView === latestPojectsLength - 1 ?
-                            'flex-start' :
-                            'space-between'
-                    }
+                    justifyContent="space-between"
                     minWidth={75}
                 >
-                    {currentInView > 0 && (
-                        <button
-                            onClick={handleClickPrev}
-                            className={`${classes.arrow}`}
-                        >
-                        </button>
-                    
-                    )}
-                    {currentInView < latestPojectsLength - 1 && (
-                        <button
-                            onClick={handleClickNext}
-                            className={classes.arrow}
-                        >
-                        </button>
-                    )}
+                    <button
+                        onClick={handleClickPrev}
+                        className={`${classes.arrow}`}
+                    >
+                    </button>
+                    <button
+                        onClick={handleClickNext}
+                        className={classes.arrow}
+                    >
+                    </button>
                 </Box>
             </Box>
         </HomeSubContainer>

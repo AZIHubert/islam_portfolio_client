@@ -46,6 +46,7 @@ export default ({
             afterSlide={prevState => setCurrentInView(prevState)}
             slideIndex={currentInView}
             withoutControls
+            disableEdgeSwiping
         >
             {thumbnailsURL.map((thumbnailUrl, i) => (
                 <div
