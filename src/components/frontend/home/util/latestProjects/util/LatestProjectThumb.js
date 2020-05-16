@@ -3,22 +3,7 @@ import React from 'react';
 import {
     makeStyles
 } from '@material-ui/core/styles';
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import {
-    Carousel
-} from 'react-responsive-carousel';
-
-const getConfigurableProps = () => ({
-    showArrows: false,
-    showStatus: false,
-    showIndicators: false,
-    infiniteLoop: true,
-    useKeyboardArrows: true,
-    autoPlay: false,
-    stopOnHover: false,
-    swipeable: true,
-    dynamicHeight: false
-});
+import Carousel from 'nuka-carousel';
 
 const useStyles = makeStyles(theme => ({
     squareBox: {
@@ -56,17 +41,16 @@ export default ({
     setCurrentInView
 }) => {
     const classes = useStyles(theme);
-    const updateCurrentSlide = (index) => {
-        setCurrentInView(index);
-    };
     return (
         <Carousel
-            selectedItem={currentInView}
-            {...getConfigurableProps()}
-            onChange={updateCurrentSlide}
+            afterSlide={prevState => setCurrentInView(prevState)}
+            slideIndex={currentInView}
+            wrapAround
+            withoutControls
         >
-            {thumbnailsURL.map(thumbnailUrl => (
+            {thumbnailsURL.map((thumbnailUrl, i) => (
                 <div
+                    key={i}
                     className={classes.squareBox}
                 >
                     <div

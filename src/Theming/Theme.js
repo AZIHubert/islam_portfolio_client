@@ -4,7 +4,8 @@ export default () => {
     const defaultTheme = createMuiTheme({
     palette: {
         "primaryColor": "#fff",
-        "secondaryColor": "#000"
+        "secondaryColor": "#000",
+        "tertiaryColor": "blue"
     },
         spacing: 10,
     });
