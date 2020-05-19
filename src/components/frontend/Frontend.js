@@ -22,7 +22,11 @@ import {
 
 const useStyles = makeStyles(theme => ({
     mainWrapper: {
-        marginLeft: theme.custom.navbarWidthlg
+        marginLeft: theme.custom.navbarWidthMD,
+        [theme.breakpoints.down('sm')]: {
+            marginLeft: 0,
+            marginTop: theme.custom.navbarHeight
+        },
     }
 }));
 

@@ -1,6 +1,11 @@
+import fontFace, {
+    defaultFontFamily
+} from '../fonts';
+
 export default (theme) => ({
     MuiCssBaseline: {
         '@global': {
+            '@font-face': fontFace,
             body: {
                 backgroundColor: theme.palette.primaryColor,
             },
@@ -11,7 +16,8 @@ export default (theme) => ({
             },
             a: {
                 color: theme.palette.secondaryColor,
-                textDecoration: 'none'
+                textDecoration: 'none',
+                fontFamily: defaultFontFamily
             }
         },
     },
