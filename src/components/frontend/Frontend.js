@@ -14,6 +14,8 @@ import WorkDetail from './work_detail/WorkDetail';
 import Blog from './blog/Blog';
 import Contact from './contact/Contact';
 
+import Footer from './footer/Footer';
+
 import NotFound from '../not_found/NotFound';
 
 import {
@@ -51,6 +53,7 @@ export default ({theme}) => {
                     <Route path="/contact" component={Contact} />
                     <Route path="*" component={NotFound} />
                 </Switch>
+                <Footer />
             </div>
         </>
     )

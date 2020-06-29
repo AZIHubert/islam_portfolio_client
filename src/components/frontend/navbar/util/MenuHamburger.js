@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
-import { Box, Button } from '@material-ui/core';
+import { Box } from '@material-ui/core';
 
 import { makeStyles } from '@material-ui/core/styles';
 

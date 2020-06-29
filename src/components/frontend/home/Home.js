@@ -4,8 +4,6 @@ import LatestProject from './util/latestProjects/LatestProjects';
 import HightlightWorks from './util/hightlightWorks/HightlightWorks';
 import About from './util/about/About';
 import ProjectsList from './util/projectsList/ProjectsList';
-import Contact from './util/contact/Contact';
-import Footer from './util/footer/Footer';
 
 import {
     DUMMY_WORKS
@@ -25,8 +23,6 @@ export default ({theme}) => {
                 works={lastHighlightWorks}
             />
             <ProjectsList />
-            <Contact />
-            <Footer />
         </div>
     );
 };
