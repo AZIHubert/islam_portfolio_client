@@ -14,11 +14,19 @@ const useStyles = makeStyles(theme => ({
         width: 10,
         height: 10,
         marginRight: theme.spacing(0.5),
-        backgroundColor: props => props.decoration ? theme.palette.secondaryColor : ''
+        backgroundColor: theme.palette.secondaryColor,
+        transition: theme.transitions.create('background-color', {
+            duration: theme.transitions.duration.shorter,
+            easing: theme.transitions.easing.easeInOut
+        }),
     },
     text: {
         textTransform: 'uppercase',
-        fontSize: '1.1rem'
+        fontSize: '1.1rem',
+        transition: theme.transitions.create('color', {
+            duration: theme.transitions.duration.shorter,
+            easing: theme.transitions.easing.easeInOut
+        })
     }
 }));
 
@@ -31,12 +39,12 @@ export default props => {
             alignItems="center"
         >
             <Box
-                className={classes.box}
+                className={`type-title-box ${classes.box}`}
             >
             </Box>
             <Typography
                 variant="h4"
-                className={classes.text}
+                className={`type-title-title ${classes.text}`}
             >
                 {children}
             </Typography>

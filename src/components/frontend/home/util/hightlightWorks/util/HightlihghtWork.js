@@ -4,7 +4,7 @@ import {
     Box
 } from '@material-ui/core';
 
-import HomeSubContainer from '../../../../util/HomeSubContainer';
+import SubContainer from '../../../../util/SubContainer';
 import TypeTitle from '../../../../util/TypeTitle';
 import WorkTitle from '../../../../util/WorkTitle';
 import HighlightWorkThumbnail from './HightlightWorkThumbnail';
@@ -46,16 +46,14 @@ export default props => {
         <Box
             className={classes.container}
         >
-            <HomeSubContainer
+            <SubContainer
                 paddingTop
                 paddingBottom
             >
                 <Box
                     className={classes.typeContainer}
                 >
-                    <TypeTitle
-                        decoration
-                    >
+                    <TypeTitle>
                         {getType(type)}
                     </TypeTitle>
                 </Box>
@@ -65,7 +63,7 @@ export default props => {
                 <WorkTitle>
                     {title}
                 </WorkTitle>
-            </HomeSubContainer>
+            </SubContainer>
         </Box>
     );
 };

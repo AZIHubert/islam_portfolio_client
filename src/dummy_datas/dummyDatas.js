@@ -31,7 +31,7 @@ export const DUMMY_WORKS = [
     },
     {
         _id: 1,
-        title: 'work 2',
+        title: 'Il monte haut pour toucher terre',
         index: 1,
         type: 0,
         thumbnailURL: 'https://dummyimage.com/400x600/000/fff&text=work+2',

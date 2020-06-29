@@ -2,7 +2,7 @@ import React from 'react';
 
 import Button from './util/Button';
 
-import HomeSubContainer from '../../../util/HomeSubContainer';
+import SubContainer from '../../../util/SubContainer';
 
 import {
     Typography,
@@ -30,7 +30,7 @@ const useStyles = makeStyles(theme => ({
 export default ({theme}) => {
     const classes = useStyles(theme);
     return (
-        <HomeSubContainer
+        <SubContainer
             paddingTop
             paddingBottom
             borderBottom
@@ -53,6 +53,6 @@ export default ({theme}) => {
                 </Box>
                 <Button/>
             </Box>
-        </HomeSubContainer>
+        </SubContainer>
     );
 };

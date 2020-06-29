@@ -7,7 +7,7 @@ import {
     Grid
 } from '@material-ui/core';
 
-import HomeSubContainer from '../../util/HomeSubContainer';
+import SubContainer from '../../util/SubContainer';
 
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -39,7 +39,7 @@ export default ({theme}) => {
     } = DUMMY_GENERAL
     return (
         <>
-            <HomeSubContainer
+            <SubContainer
                 paddingTop
             >
                 <Grid
@@ -132,7 +132,7 @@ export default ({theme}) => {
                         </Grid>
                     )}
                 </Grid>
-            </HomeSubContainer>
+            </SubContainer>
         </>
     );
 };

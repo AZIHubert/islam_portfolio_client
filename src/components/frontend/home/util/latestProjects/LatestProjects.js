@@ -6,7 +6,7 @@ import Arrow from '../../../../../res/images/Arrow.png';
 
 import LatestProjectThumb from './util/LatestProjectThumb';
 
-import HomeSubContainer from '../../../util/HomeSubContainer';
+import SubContainer from '../../../util/SubContainer';
 import TypeTitle from '../../../util/TypeTitle';
 import WorkTitle from '../../../util/WorkTitle';
 
@@ -43,6 +43,10 @@ const useStyles = makeStyles(theme => ({
         borderColor: 'transparent',
         padding: 0,
         width: 70,
+        cursor: 'pointer',
+        [theme.breakpoints.down('lg')]: {
+            width: 50,
+        },
         '& img': {
             width: '100%',
             height: 'auto'
@@ -78,7 +82,7 @@ export default withWidth()(props => {
     }
     
     return (
-        <HomeSubContainer
+        <SubContainer
             paddingTop
             paddingBottom
             borderBottom
@@ -104,9 +108,7 @@ export default withWidth()(props => {
                     <Box
                         className={classes.latestProjectTitleContainer}
                     >
-                        <TypeTitle
-                            decoration
-                        >
+                        <TypeTitle>
                             Latest Project
                         </TypeTitle>
                     </Box>
@@ -140,6 +142,6 @@ export default withWidth()(props => {
                     </Box>
                 </Box>
             </Box>
-        </HomeSubContainer>
+        </SubContainer>
     );
 });

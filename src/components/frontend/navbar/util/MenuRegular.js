@@ -24,9 +24,9 @@ const useStyles = makeStyles(theme => ({
         top: 0,
         left: 0,
         height: '100vh',
-        width: theme.custom.navbarWidthMD,
-        [theme.breakpoints.up('lg')]: {
-            width: theme.custom.navbarWidthLG,
+        width: theme.custom.navbarWidthLG,
+        [theme.breakpoints.down('lg')]: {
+            width: theme.custom.navbarWidthMD
         },
         boxSizing: 'border-box',
         borderRight: `${theme.custom.borderSize} solid ${theme.palette.secondaryColor}`,
@@ -40,8 +40,8 @@ const useStyles = makeStyles(theme => ({
     logoContainer: {
         borderBottom: `${theme.custom.borderSize} solid ${theme.palette.secondaryColor}`,
         padding: theme.spacing(6),
-        [theme.breakpoints.down('md')]: {
-            padding: theme.spacing(2, 5),
+        [theme.breakpoints.down('lg')]: {
+            padding: theme.spacing(1, 5),
         }
     },
     logo: {
@@ -57,11 +57,14 @@ const useStyles = makeStyles(theme => ({
     link: {
         fontFamily: 'AkzidenzGroteskBoldCondensed',
         transition: 'color 250ms ease',
+        textStrokeWidth: 1,
+        textStrokeColor: theme.palette.secondaryColor,
         '&.active, &:hover': {
-            color: theme.palette.tertiaryColor
+            color: theme.palette.primaryColor
         },
-        [theme.breakpoints.up('lg')]: {
-            fontSize: '3.6rem'
+        fontSize: '3.6rem',
+        [theme.breakpoints.down('lg')]: {
+            fontSize: '3rem'
         },
     },
     socialNetworkList: {
@@ -69,15 +72,17 @@ const useStyles = makeStyles(theme => ({
         bottom: 0,
         left: 0,
         width: '100%',
-        padding: theme.spacing(2, 4),
-        [theme.breakpoints.up('lg')]: {
-            padding: theme.spacing(2, 12),
+        padding: theme.spacing(2, 12),
+        [theme.breakpoints.down('lg')]: {
+            padding: theme.spacing(2, 5),
+        },
+        '& li': {
+            width: '15%'
         }
     },
     socialNetworkLink: {
         '& img': {
-            width: 25,
-            height: 'auto'
+            width: '100%'
         }
     }
 }));
@@ -188,9 +193,6 @@ export default ({
                                 rel="noopener noreferrer"
                                 className={classes.socialNetworkLink}
                             >
-                                {/* <LinkedInIcon
-                                    className={classes.socialNetworkLink}
-                                /> */}
                                 <img src={LinkedIn} alt="linkedin logo" />
                             </a>
                         </li>

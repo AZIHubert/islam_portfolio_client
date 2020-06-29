@@ -5,12 +5,15 @@ import {
 } from '@material-ui/core';
 
 import {
-    makeStyles
+    makeStyles, useTheme
 } from '@material-ui/core/styles';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles(theme => ({
     big: {
         fontSize: '3.2rem',
+        [theme.breakpoints.down('lg')]: {
+            fontSize: '2rem'
+        },
         fontFamily: 'AkzidenzGroteskBoldCondensed'
     },
     small: {
@@ -22,7 +25,8 @@ const useStyles = makeStyles(() => ({
 }));
 
 export default ({variant, children}) => {
-    const classes = useStyles();
+    const theme = useTheme();
+    const classes = useStyles(theme);
     const titleVariant = (() => {
         switch(variant){
             case 'big':

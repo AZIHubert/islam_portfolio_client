@@ -43,7 +43,11 @@ const useStyles = makeStyles(theme => ({
     },
     nav: {
         pointerEvents: 'auto',
+        cursor: 'pointer',
         width: 100,
+        [theme.breakpoints.down('lg')]: {
+            width: 75
+        },
         opacity: 0.4,
         backgroundColor: theme.palette.primaryColor,
         padding: theme.spacing(1),

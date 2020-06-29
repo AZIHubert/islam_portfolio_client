@@ -9,7 +9,7 @@ import {
 } from '@material-ui/core';
 
 import TypeTitle from '../../../util/TypeTitle';
-import HomeSubContainer from '../../../util/HomeSubContainer';
+import SubContainer from '../../../util/SubContainer';
 
 import withWidth from '@material-ui/core/withWidth';
 
@@ -92,7 +92,7 @@ export default withWidth()(props => {
     }, [textRef, textContainerRef, props.width]);
     return (
         <Box>
-            <HomeSubContainer
+            <SubContainer
                 paddingTop
             >
                 <TypeTitle
@@ -100,7 +100,7 @@ export default withWidth()(props => {
                 >
                     about
                 </TypeTitle>
-            </HomeSubContainer>
+            </SubContainer>
                 <Box
                     className={classes.bgTextContainer}
                     ref={textContainerRef}
@@ -131,7 +131,7 @@ export default withWidth()(props => {
                         </Box>
                     </Box>
                 </Box>
-            <HomeSubContainer
+            <SubContainer
                 paddingBottom
                 borderBottom
             />
