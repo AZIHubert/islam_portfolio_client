@@ -1,5 +1,10 @@
 import React from 'react';
 
+import Logo from '../../../../res/images/logo.png';
+import Instagram from '../../../../res/images/Instagram.png';
+import LinkedIn from '../../../../res/images/Linkedin.png';
+import Pinterest from '../../../../res/images/Pinterest.png';
+
 import {
     Link,
     NavLink
@@ -13,10 +18,6 @@ import {
     makeStyles
 } from '@material-ui/core/styles';
 
-import PinterestIcon from '@material-ui/icons/Pinterest';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import InstagramIcon from '@material-ui/icons/Instagram';
-
 const useStyles = makeStyles(theme => ({
     rootContainer: {
         position: 'fixed',
@@ -24,6 +25,9 @@ const useStyles = makeStyles(theme => ({
         left: 0,
         height: '100vh',
         width: theme.custom.navbarWidthMD,
+        [theme.breakpoints.up('lg')]: {
+            width: theme.custom.navbarWidthLG,
+        },
         boxSizing: 'border-box',
         borderRight: `${theme.custom.borderSize} solid ${theme.palette.secondaryColor}`,
         backgroundColor: theme.palette.primaryColor,
@@ -35,12 +39,16 @@ const useStyles = makeStyles(theme => ({
     },
     logoContainer: {
         borderBottom: `${theme.custom.borderSize} solid ${theme.palette.secondaryColor}`,
-        padding: theme.spacing(1),
+        padding: theme.spacing(6),
+        [theme.breakpoints.down('md')]: {
+            padding: theme.spacing(2, 5),
+        }
     },
     logo: {
-        backgroundColor: theme.palette.secondaryColor,
         width: '100%',
-        height: 180
+        '& img': {
+            width: '100%'
+        }
     },
     listLinks: {
         textTransform: 'uppercase',
@@ -51,7 +59,10 @@ const useStyles = makeStyles(theme => ({
         transition: 'color 250ms ease',
         '&.active, &:hover': {
             color: theme.palette.tertiaryColor
-        }
+        },
+        [theme.breakpoints.up('lg')]: {
+            fontSize: '3.6rem'
+        },
     },
     socialNetworkList: {
         position: 'absolute',
@@ -59,12 +70,14 @@ const useStyles = makeStyles(theme => ({
         left: 0,
         width: '100%',
         padding: theme.spacing(2, 4),
+        [theme.breakpoints.up('lg')]: {
+            padding: theme.spacing(2, 12),
+        }
     },
     socialNetworkLink: {
-        transition: 'color 250ms ease',
-        fontSize: '2rem',
-        '&:hover': {
-            color: theme.palette.tertiaryColor
+        '& img': {
+            width: 25,
+            height: 'auto'
         }
     }
 }));
@@ -93,7 +106,7 @@ export default ({
                         to="/"
                         className={classes.logo}
                     >
-                        Logo
+                        <img src={Logo} alt="logo" />
                     </Link>
                 </Box>
                 <Box
@@ -173,10 +186,12 @@ export default ({
                                 href={linkedin.link}
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                className={classes.socialNetworkLink}
                             >
-                                <LinkedInIcon
+                                {/* <LinkedInIcon
                                     className={classes.socialNetworkLink}
-                                />
+                                /> */}
+                                <img src={LinkedIn} alt="linkedin logo" />
                             </a>
                         </li>
                     )}
@@ -187,10 +202,12 @@ export default ({
                                 href={instagram.link}
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                className={classes.socialNetworkLink}
                             >
-                                <InstagramIcon
+                                {/* <InstagramIcon
                                     className={classes.socialNetworkLink}
-                                />
+                                /> */}
+                                <img src={Instagram} alt="instagram logo" />
                             </a>
                         )}
                     </li>
@@ -200,10 +217,11 @@ export default ({
                                 href={pinterest.link}
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                className={classes.socialNetworkLink}
                             >
-                                <PinterestIcon
-                                    className={classes.socialNetworkLink}
-                                />
+                                {/* <PinterestIcon
+                                /> */}
+                                <img src={Pinterest} alt="pinterest logo" />
                             </a>
                         )}
                     </li>

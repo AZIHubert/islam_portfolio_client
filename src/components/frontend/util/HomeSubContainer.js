@@ -8,7 +8,10 @@ const useStyles = makeStyles(theme => ({
     container: {
         borderTop: props => props.borderTop ? `${theme.custom.borderSize} solid ${theme.palette.secondaryColor}` :  '',
         borderBottom: props => props.borderBottom ? `${theme.custom.borderSize} solid ${theme.palette.secondaryColor}` : '',
-        padding: props => theme.spacing(props.paddingTop ? 2 : 0, 2, props.paddingBottom ? 2 : 0, 2)
+        padding: props => theme.spacing(props.paddingTop ? 2 : 0, 2, props.paddingBottom ? 2 : 0, 2),
+        [theme.breakpoints.up('lg')]: {
+            padding: props => theme.spacing(props.paddingTop ? 4 : 0, 4, props.paddingBottom ? 4 : 0, 4),
+        }
     }
 }));
 

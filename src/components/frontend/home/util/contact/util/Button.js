@@ -12,18 +12,23 @@ import {DUMMY_GENERAL} from '../../../../../../dummy_datas/dummyDatas';
 
 const useStyles = makeStyles(theme => ({
     button: {
-        width: 120,
-        height: 120,
+        width: 130,
+        minWidth: 130,
+        height: 130,
+        marginBottom: -30,
+        marginRight: 50,
+        boxSizing: 'border-box',
+        padding: 8,
         borderRadius: '50%',
         textAlign: 'center',
         backgroundColor: theme.palette.tertiaryColor,
         '&:hover': {
             backgroundColor: theme.palette.tertiaryColor
         },
-        position: 'absolute',
         color: theme.palette.primaryColor,
-        top: -10,
-        right: 100
+        [theme.breakpoints.down('xs')]: {
+            marginRight: 0
+        }
     }
 }));
 

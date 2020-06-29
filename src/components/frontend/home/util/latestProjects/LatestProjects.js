@@ -2,6 +2,8 @@ import React, {
     useState
 } from 'react';
 
+import Arrow from '../../../../../res/images/Arrow.png';
+
 import LatestProjectThumb from './util/LatestProjectThumb';
 
 import HomeSubContainer from '../../../util/HomeSubContainer';
@@ -11,6 +13,10 @@ import WorkTitle from '../../../util/WorkTitle';
 import {
     Box
 } from '@material-ui/core';
+
+import withWidth, {
+    isWidthDown
+} from '@material-ui/core/withWidth';
 
 import {
     DUMMY_WORKS,
@@ -22,26 +28,40 @@ import {
 } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
-    latestProjectTitleContainer: {
-        paddingRight: theme.spacing(4)
+    textContainer: {
+        paddingBottom: theme.spacing(2),
+        paddingTop: theme.spacing(1)
     },
-    arrow: {
-        backgroundColor: theme.palette.primaryColor,
-        padding: 0,
-        width: 35,
-        height: 30,
-        border: `1px solid ${theme.palette.secondaryColor}`,
-        '&:focus': {
-            outline: 0
+    latestProjectTitleContainer: {
+        paddingRight: theme.spacing(4),
+        [theme.breakpoints.down('sm')]: {
+            paddingRight: 0
         }
     },
+    arrow: {
+        backgroundColor: 'transparent',
+        borderColor: 'transparent',
+        padding: 0,
+        width: 70,
+        '& img': {
+            width: '100%',
+            height: 'auto'
+        },
+        '&:focus': {
+            outline: 'none '
+        }
+    },
+    previewArrowContainer: {
+        marginRight: theme.spacing(2),
+    },
     previewArrow: {
-        marginRight: theme.spacing(2)
+        transform: 'rotate(180deg)',
+        msTransformOrigin: 'center'
     }
 }));
 
-export default ({theme}) => {
-    const classes = useStyles(theme)
+export default withWidth()(props => {
+    const classes = useStyles(props.theme)
     const {latestProjectsNum} = DUMMY_GENERAL;
     const latestPojects = DUMMY_WORKS.slice(0, latestProjectsNum);
     const latestPojectsLength = latestPojects.length;
@@ -72,10 +92,14 @@ export default ({theme}) => {
                 display='flex'
                 justifyContent='space-between'
                 alignItems="center"
+                flexDirection={isWidthDown('sm', props.width) ? 'column' : 'row' }
+                className={classes.textContainer}
             >
                 <Box
                     display="flex"
                     alignItems="center"
+                    justifyContent={isWidthDown('sm', props.width) ? 'space-between' : 'flex-start' }
+                    width='100%'
                 >
                     <Box
                         className={classes.latestProjectTitleContainer}
@@ -92,22 +116,30 @@ export default ({theme}) => {
                 </Box>
                 <Box
                     display="flex"
-                    alignItems="center"
-                    justifyContent="space-between"
-                    minWidth={75}
+                    justifyContent="flex-end"
+                    width='100%'
                 >
-                    <button
-                        onClick={handleClickPrev}
-                        className={`${classes.arrow}`}
+                    <Box
+                        display="flex"
+                        alignItems="center"
+                        justifyContent="space-between"
+                        minWidth={75}
                     >
-                    </button>
-                    <button
-                        onClick={handleClickNext}
-                        className={classes.arrow}
-                    >
-                    </button>
+                        <button
+                            onClick={handleClickPrev}
+                            className={`${classes.arrow} ${classes.previewArrowContainer}`}
+                        >
+                            <img src={Arrow} alt="arrow" className={classes.previewArrow} />
+                        </button>
+                        <button
+                            onClick={handleClickNext}
+                            className={classes.arrow}
+                        >
+                            <img src={Arrow} alt="arrow" />
+                        </button>
+                    </Box>
                 </Box>
             </Box>
         </HomeSubContainer>
     );
-};
+});

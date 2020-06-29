@@ -22,7 +22,13 @@ const useStyles = makeStyles(theme => ({
         paddingBottom: theme.spacing(5)
     },
     titleContainer: {
-        paddingBottom: theme.spacing(1)
+        paddingBottom: theme.spacing(1),
+    },
+    title: {
+        fontFamily: 'AkzidenzGroteskBoldCondensed'
+    },
+    link: {
+        transition: 'color 250ms ease'
     }
 }));
 
@@ -53,6 +59,7 @@ export default ({theme}) => {
                     >
                         <Typography
                             variant="h6"
+                            className={classes.title}
                         >
                             contact us
                         </Typography>
@@ -62,6 +69,7 @@ export default ({theme}) => {
                     >
                         <Link
                             href={`mailto:${email}`}
+                            className={classes.link}
                         >
                             {email}
                         </Link>
@@ -80,6 +88,7 @@ export default ({theme}) => {
                         >
                             <Typography
                                 variant="h6"
+                                className={classes.title}
                             >
                                 follow us
                             </Typography>
@@ -91,6 +100,7 @@ export default ({theme}) => {
                                 <Link
                                     href={instagram.link}
                                     target="_blank"
+                                    className={classes.link}
                                 >
                                     instagram
                                 </Link>
@@ -103,6 +113,7 @@ export default ({theme}) => {
                                 <Link
                                     href={linkedin.link}
                                     target="_blank"
+                                    className={classes.link}
                                 >
                                     linkedin
                                 </Link>
@@ -115,6 +126,7 @@ export default ({theme}) => {
                                 <Link
                                     href={pinterest.link}
                                     target="_blank"
+                                    className={classes.link}
                                 >
                                     pinterest
                                 </Link>

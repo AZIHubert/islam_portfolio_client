@@ -1,24 +1,22 @@
-import AkzidenzGroteskBoldTTF from '../res/fonts/akzidenzGrotesk/bold/AkzidenzGroteskBQ-Bold.ttf';
-import AkzidenzGroteskBoldWoff from '../res/fonts/akzidenzGrotesk/bold/AkzidenzGroteskBQ-Bold.woff';
-import AkzidenzGroteskBoldWoff2 from '../res/fonts/akzidenzGrotesk/bold/AkzidenzGroteskBQ-Bold.woff2';
-import AkzidenzGroteskBoldSVG from '../res/fonts/akzidenzGrotesk/bold/AkzidenzGroteskBQ-Bold.svg';
+import AkzidenzGroteskBoldTTF from '../../res/fonts/akzidenzGrotesk/bold/AkzidenzGroteskBQ-Bold.ttf';
+import AkzidenzGroteskBoldWoff from '../../res/fonts/akzidenzGrotesk/bold/AkzidenzGroteskBQ-Bold.woff';
+import AkzidenzGroteskBoldWoff2 from '../../res/fonts/akzidenzGrotesk/bold/AkzidenzGroteskBQ-Bold.woff2';
+import AkzidenzGroteskBoldSVG from '../../res/fonts/akzidenzGrotesk/bold/AkzidenzGroteskBQ-Bold.svg';
 
-import AkzidenzGroteskBoldCondensedTTF from '../res/fonts/akzidenzGrotesk/boldCondensed/AkzidenzGroteskBQ-BdCnd.ttf';
-import AkzidenzGroteskBoldCondensedWoff from '../res/fonts/akzidenzGrotesk/boldCondensed/AkzidenzGroteskBQ-BdCnd.woff';
-import AkzidenzGroteskBoldCondensedWoff2 from '../res/fonts/akzidenzGrotesk/boldCondensed/AkzidenzGroteskBQ-BdCnd.woff2';
-import AkzidenzGroteskBoldCondensedSVG from '../res/fonts/akzidenzGrotesk/boldCondensed/AkzidenzGroteskBQ-BdCnd.svg';
+import AkzidenzGroteskBoldCondensedTTF from '../../res/fonts/akzidenzGrotesk/boldCondensed/AkzidenzGroteskBQ-BdCnd.ttf';
+import AkzidenzGroteskBoldCondensedWoff from '../../res/fonts/akzidenzGrotesk/boldCondensed/AkzidenzGroteskBQ-BdCnd.woff';
+import AkzidenzGroteskBoldCondensedWoff2 from '../../res/fonts/akzidenzGrotesk/boldCondensed/AkzidenzGroteskBQ-BdCnd.woff2';
+import AkzidenzGroteskBoldCondensedSVG from '../../res/fonts/akzidenzGrotesk/boldCondensed/AkzidenzGroteskBQ-BdCnd.svg';
 
-import AkzidenzGroteskMediumCondensedTTF from '../res/fonts/akzidenzGrotesk/mediumCondensed/AkzidenzGroteskBQ-MdCnd.ttf';
-import AkzidenzGroteskMediumCondensedWoff from '../res/fonts/akzidenzGrotesk/mediumCondensed/AkzidenzGroteskBQ-MdCnd.woff';
-import AkzidenzGroteskMediumCondensedWoff2 from '../res/fonts/akzidenzGrotesk/mediumCondensed/AkzidenzGroteskBQ-MdCnd.woff2';
-import AkzidenzGroteskMediumCondensedSVG from '../res/fonts/akzidenzGrotesk/mediumCondensed/AkzidenzGroteskBQ-MdCnd.svg';
+import AkzidenzGroteskMediumCondensedTTF from '../../res/fonts/akzidenzGrotesk/mediumCondensed/AkzidenzGroteskBQ-MdCnd.ttf';
+import AkzidenzGroteskMediumCondensedWoff from '../../res/fonts/akzidenzGrotesk/mediumCondensed/AkzidenzGroteskBQ-MdCnd.woff';
+import AkzidenzGroteskMediumCondensedWoff2 from '../../res/fonts/akzidenzGrotesk/mediumCondensed/AkzidenzGroteskBQ-MdCnd.woff2';
+import AkzidenzGroteskMediumCondensedSVG from '../../res/fonts/akzidenzGrotesk/mediumCondensed/AkzidenzGroteskBQ-MdCnd.svg';
 
-import AkzidenzGroteskRegularTTF from '../res/fonts/akzidenzGrotesk/regular/AkzidenzGroteskBQ-Reg.ttf';
-import AkzidenzGroteskRegularWoff from '../res/fonts/akzidenzGrotesk/regular/AkzidenzGroteskBQ-Reg.woff';
-import AkzidenzGroteskRegularWoff2 from '../res/fonts/akzidenzGrotesk/regular/AkzidenzGroteskBQ-Reg.woff2';
-import AkzidenzGroteskRegularSVG from '../res/fonts/akzidenzGrotesk/regular/AkzidenzGroteskBQ-Reg.svg';
-
-console.log(AkzidenzGroteskRegularTTF)
+import AkzidenzGroteskRegularTTF from '../../res/fonts/akzidenzGrotesk/regular/AkzidenzGroteskBQ-Reg.ttf';
+import AkzidenzGroteskRegularWoff from '../../res/fonts/akzidenzGrotesk/regular/AkzidenzGroteskBQ-Reg.woff';
+import AkzidenzGroteskRegularWoff2 from '../../res/fonts/akzidenzGrotesk/regular/AkzidenzGroteskBQ-Reg.woff2';
+import AkzidenzGroteskRegularSVG from '../../res/fonts/akzidenzGrotesk/regular/AkzidenzGroteskBQ-Reg.svg';
 
 
 const AkzidenzGroteskBold = {
@@ -80,4 +78,4 @@ export default [
     AkzidenzGroteskRegular
 ];
 
-export const defaultFontFamily = 'AkzidenzGroteskRegular, sans-serif';
+export const fontFamily = 'AkzidenzGroteskRegular, sans-serif';

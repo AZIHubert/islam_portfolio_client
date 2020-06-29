@@ -3,11 +3,11 @@ import CSSBaselineOverride from './overrides/CSSBaseline';
 import LinkOverride from './overrides/Link';
 import TypographyOverride from './overrides/Typography';
 
-import customVariables from './custom';
+import customVariables from './util/custom';
 
 import {
-    defaultFontFamily
-} from './fonts';
+    fontFamily
+} from './util/fonts';
 
 export default () => {
     const defaultTheme = createMuiTheme({
@@ -35,7 +35,7 @@ export default () => {
             ...Typography
         },
         typography: {
-            fontFamily: defaultFontFamily
+            fontFamily
         },
         custom: {
             ...custom

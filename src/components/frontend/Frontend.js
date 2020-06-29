@@ -23,6 +23,9 @@ import {
 const useStyles = makeStyles(theme => ({
     mainWrapper: {
         marginLeft: theme.custom.navbarWidthMD,
+        [theme.breakpoints.up('lg')]: {
+            marginLeft: theme.custom.navbarWidthLG,
+        },
         [theme.breakpoints.down('sm')]: {
             marginLeft: 0,
             marginTop: theme.custom.navbarHeight

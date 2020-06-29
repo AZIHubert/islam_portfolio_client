@@ -14,7 +14,7 @@ const useStyles = makeStyles(theme => ({
         '&:before': {
             content: '""',
             display: 'block',
-            paddingTop: '60%'
+            paddingTop: '50%'
         },
     },
     squareContent: {

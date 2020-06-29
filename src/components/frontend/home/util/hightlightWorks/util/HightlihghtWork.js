@@ -21,6 +21,12 @@ const useStyles = makeStyles(theme => ({
     container: {
         width: '50%',
         borderRight: props => props.borderRight ? `${theme.custom.borderSize} solid ${theme.palette.secondaryColor}` : 0
+    },
+    typeContainer: {
+        paddingBottom: theme.spacing(2),
+        [theme.breakpoints.down('sm')]: {
+            paddingBottom: theme.spacing(1)
+        }
     }
 }))
 
@@ -44,9 +50,15 @@ export default props => {
                 paddingTop
                 paddingBottom
             >
-                <TypeTitle>
-                    {getType(type)}
-                </TypeTitle>
+                <Box
+                    className={classes.typeContainer}
+                >
+                    <TypeTitle
+                        decoration
+                    >
+                        {getType(type)}
+                    </TypeTitle>
+                </Box>
                 <HighlightWorkThumbnail
                     thumbnailURL={thumbnailURL}
                 />

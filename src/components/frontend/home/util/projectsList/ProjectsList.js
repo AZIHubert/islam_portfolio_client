@@ -1,6 +1,9 @@
 import React, {
-    useState
+    useState,
+    useEffect
 } from 'react';
+
+import Arrow from '../../../../../res/images/Arrow.png';
 
 import Carousel from 'nuka-carousel';
 
@@ -13,6 +16,10 @@ import {
 import {
     makeStyles
 } from '@material-ui/core/styles';
+
+import withWidth, {
+    isWidthDown
+} from '@material-ui/core/withWidth'
 
 import {
     DUMMY_WORKS,
@@ -36,19 +43,32 @@ const useStyles = makeStyles(theme => ({
     },
     nav: {
         pointerEvents: 'auto',
-        width: 60,
-        opacity: 0.2,
-        backgroundColor: theme.palette.primaryColor
+        width: 100,
+        opacity: 0.4,
+        backgroundColor: theme.palette.primaryColor,
+        padding: theme.spacing(1),
+        '& img': {
+            width: '100%',
+            height: 'auto'
+        }
+    },
+    prevArrow: {
+        transformOrigin: 'center',
+        transform: 'rotate(180deg)'
     }
 }));
 
-export default ({theme}) => {
-    const numToDisplay = 3.2;
-    const classes = useStyles(theme);
+export default withWidth()(props => {
+    const [numToDisplay, setNumToDisplay] = useState(isWidthDown('xs', props.width) ? 1.2 : isWidthDown('sm', props.width) ? 2.2 : 3.2);
+    const classes = useStyles(props.theme);
     const displayedWorks = DUMMY_WORKS
         .filter(work => work.highlight.active)
         .sort((a, b) => a.highlight.index - b.highlight.index);
     const [currentInView, setCurrentInView] = useState(0);
+    useEffect(() => {
+        setNumToDisplay(isWidthDown('xs', props.width) ? 1.2 : isWidthDown('sm', props.width) ? 2.2 : 3.2);
+        setCurrentInView(0);
+    }, [props.width]);
     const getType = typeId => {
         return DUMMY_TYPES.find(type => type._id === typeId).title
     };
@@ -111,7 +131,7 @@ export default ({theme}) => {
                     justifyContent="space-around"
                     alignItems="center"
                 >
-                    <span>Preview</span>
+                    <img src={Arrow} alt="arrow" className={classes.prevArrow} />
                 </Box>
                 <Box
                     onClick={nextSlide}
@@ -121,9 +141,9 @@ export default ({theme}) => {
                     justifyContent="space-around"
                     alignItems="center"
                 >
-                    <span>Next</span>
+                    <img src={Arrow} alt="arrow" />
                 </Box>
             </Box>
         </Box>
     );
-};
+});

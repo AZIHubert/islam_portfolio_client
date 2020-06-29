@@ -1,6 +1,4 @@
-import fontFace, {
-    defaultFontFamily
-} from '../fonts';
+import fontFace from '../util/fonts';
 
 export default (theme) => ({
     MuiCssBaseline: {
@@ -16,8 +14,7 @@ export default (theme) => ({
             },
             a: {
                 color: theme.palette.secondaryColor,
-                textDecoration: 'none',
-                fontFamily: defaultFontFamily
+                textDecoration: 'none'
             }
         },
     },

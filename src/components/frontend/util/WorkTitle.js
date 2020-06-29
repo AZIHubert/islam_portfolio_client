@@ -10,7 +10,8 @@ import {
 
 const useStyles = makeStyles(() => ({
     big: {
-        fontSize: '2.2rem'
+        fontSize: '3.2rem',
+        fontFamily: 'AkzidenzGroteskBoldCondensed'
     },
     small: {
         fontSize: '1.1rem'

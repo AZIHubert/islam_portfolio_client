@@ -17,7 +17,8 @@ const useStyles = makeStyles(theme => ({
         backgroundColor: props => props.decoration ? theme.palette.secondaryColor : ''
     },
     text: {
-        textTransform: 'uppercase'
+        textTransform: 'uppercase',
+        fontSize: '1.1rem'
     }
 }));
 
@@ -34,7 +35,7 @@ export default props => {
             >
             </Box>
             <Typography
-                variant="body1"
+                variant="h4"
                 className={classes.text}
             >
                 {children}

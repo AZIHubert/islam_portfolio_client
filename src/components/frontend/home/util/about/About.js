@@ -9,8 +9,9 @@ import {
 } from '@material-ui/core';
 
 import TypeTitle from '../../../util/TypeTitle';
-
 import HomeSubContainer from '../../../util/HomeSubContainer';
+
+import withWidth from '@material-ui/core/withWidth';
 
 import {
     makeStyles 
@@ -33,7 +34,17 @@ const useStyles = makeStyles(theme => ({
         whiteSpace: 'nowrap'
     },
     text: {
-        paddingRight: theme.spacing(1)
+        paddingRight: theme.spacing(1),
+        '& h3': {
+            [theme.breakpoints.up('lg')]: {
+                fontSize: '7rem',
+            },
+            fontSize: '5rem',
+            [theme.breakpoints.down('sm')]: {
+                fontSize: '3rem',
+            },
+            // fontFamily: 'AkzidenzGroteskBold'
+        }
     },
     firstText: {
         animation: theme.transitions.create('$animateOne', {
@@ -68,9 +79,9 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-export default ({theme}) => {
+export default withWidth()(props => {
     const {about} = DUMMY_GENERAL;
-    const classes = useStyles(theme);
+    const classes = useStyles(props.theme);
     const textRef = useRef(null);
     const textContainerRef = useRef(null);
     useEffect(() => {
@@ -78,47 +89,52 @@ export default ({theme}) => {
             let textHeight = textRef.current.offsetHeight;
             textContainerRef.current.style.height = `${textHeight}px`;
         }
-    }, [textRef, textContainerRef]);
+    }, [textRef, textContainerRef, props.width]);
     return (
-        <HomeSubContainer
-            paddingTop
-            paddingBottom
-            borderBottom
-        >
-            <TypeTitle>
-                about
-            </TypeTitle>
-            <Box
-                className={classes.bgTextContainer}
-                ref={textContainerRef}
+        <Box>
+            <HomeSubContainer
+                paddingTop
             >
+                <TypeTitle
+                    decoration
+                >
+                    about
+                </TypeTitle>
+            </HomeSubContainer>
                 <Box
-                    display="flex"
-                    className={classes.animateText}
-                    
+                    className={classes.bgTextContainer}
+                    ref={textContainerRef}
                 >
                     <Box
-                        className={`${classes.text} ${classes.firstText}`}
-                        ref={textRef}
+                        display="flex"
+                        className={classes.animateText}
+                        
                     >
-                        <Typography
-                            variant="h3"
-                            
+                        <Box
+                            className={`${classes.text} ${classes.firstText}`}
+                            ref={textRef}
                         >
-                            {about}
-                        </Typography>
-                    </Box>
-                    <Box
-                        className={`${classes.text} ${classes.secondText}`}
-                    >
-                        <Typography
-                            variant="h3"
+                            <Typography
+                                variant="h3"
+                            >
+                                {about}
+                            </Typography>
+                        </Box>
+                        <Box
+                            className={`${classes.text} ${classes.secondText}`}
                         >
-                            {about}
-                        </Typography>
+                            <Typography
+                                variant="h3"
+                            >
+                                {about}
+                            </Typography>
+                        </Box>
                     </Box>
                 </Box>
-            </Box>
-        </HomeSubContainer>
+            <HomeSubContainer
+                paddingBottom
+                borderBottom
+            />
+        </Box>
     );
-};
+});
