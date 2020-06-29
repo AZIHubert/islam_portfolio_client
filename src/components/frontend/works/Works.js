@@ -1,10 +1,12 @@
 import React from 'react';
-import Works from './util/works/WorksList';
+import WorksList from './util/works/WorksList';
+import Types from './util/Types';
 
 export default () => {
     return (
         <div>
-            <Works />
+            <Types />
+            <WorksList />
         </div>
     );
 };

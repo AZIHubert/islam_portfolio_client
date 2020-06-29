@@ -103,7 +103,7 @@ export default withWidth()(props => {
                     display="flex"
                     alignItems="center"
                     justifyContent={isWidthDown('sm', props.width) ? 'space-between' : 'flex-start' }
-                    width='100%'
+                    width="75%"
                 >
                     <Box
                         className={classes.latestProjectTitleContainer}
@@ -112,14 +112,15 @@ export default withWidth()(props => {
                             Latest Project
                         </TypeTitle>
                     </Box>
-                    <WorkTitle>
-                        {latestPojects[currentInView].title}
-                    </WorkTitle>
+                    <Box width="45%">
+                        <WorkTitle>
+                            {latestPojects[currentInView].title.length <= 15 ? latestPojects[currentInView].title : `${latestPojects[currentInView].title.slice(0, 15)}...`}
+                        </WorkTitle>
+                    </Box>
                 </Box>
                 <Box
                     display="flex"
                     justifyContent="flex-end"
-                    width='100%'
                 >
                     <Box
                         display="flex"

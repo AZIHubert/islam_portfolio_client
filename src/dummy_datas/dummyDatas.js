@@ -34,7 +34,7 @@ export const DUMMY_WORKS = [
         title: 'Il monte haut pour toucher terre',
         index: 1,
         type: 0,
-        thumbnailURL: 'https://dummyimage.com/400x600/000/fff&text=work+2',
+        thumbnailURL: 'https://dummyimage.com/400x500/000/fff&text=work+2',
         highlight: {
             active: false,
             index: 0
@@ -56,7 +56,7 @@ export const DUMMY_WORKS = [
         title: 'work 4',
         index: 3,
         type: 1,
-        thumbnailURL: 'https://dummyimage.com/400x600/000/fff&text=work+4',
+        thumbnailURL: 'https://dummyimage.com/400x400/000/fff&text=work+4',
         highlight: {
             active: false,
             index: 0
@@ -78,7 +78,7 @@ export const DUMMY_WORKS = [
         title: 'work 6',
         index: 5,
         type: 2,
-        thumbnailURL: 'https://dummyimage.com/400x600/000/fff&text=work+6',
+        thumbnailURL: 'https://dummyimage.com/800x600/000/fff&text=work+6',
         highlight: {
             active: false,
             index: 0

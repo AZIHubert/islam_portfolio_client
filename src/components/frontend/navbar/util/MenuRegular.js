@@ -81,6 +81,7 @@ const useStyles = makeStyles(theme => ({
         }
     },
     socialNetworkLink: {
+        display: 'block',
         '& img': {
             width: '100%'
         }
@@ -206,9 +207,6 @@ export default ({
                                 rel="noopener noreferrer"
                                 className={classes.socialNetworkLink}
                             >
-                                {/* <InstagramIcon
-                                    className={classes.socialNetworkLink}
-                                /> */}
                                 <img src={Instagram} alt="instagram logo" />
                             </a>
                         )}

@@ -9,13 +9,13 @@ import { DUMMY_WORKS } from '../../../../../dummy_datas/dummyDatas';
 
 const useStyles = makeStyles(theme => ({
     container: {
-        borderBottom: `1px solid ${theme.palette.secondaryColor}`
+        borderBottom: `${theme.custom.borderSize} solid ${theme.palette.secondaryColor}`
     },
     firstGrid: {
-        borderRight: `1px solid ${theme.palette.secondaryColor}`
+        borderRight: `${theme.custom.borderSize} solid ${theme.palette.secondaryColor}`
     },
     thirdGrid: {
-        borderLeft: `1px solid ${theme.palette.secondaryColor}`
+        borderLeft: `${theme.custom.borderSize} solid ${theme.palette.secondaryColor}`
     }
 }));
 
@@ -27,7 +27,7 @@ const WorkList = ({width}) => {
         <Grid item xs={12}>
             {DUMMY_WORKS.map((work, index) => <SingleWork key={work._id} work={work} borderRight borderTop={index !== 0}/>)}
         </Grid>
-    ) : width === 'sm' ? (
+    ) : width === 'sm' || width === 'md' ? (
         <>
             <Grid item xs={6} className={classes.firstGrid}>
                 {DUMMY_WORKS.filter((_, index) => index % 2 === 0).map((work, index) => <SingleWork key={work._id} work={work} borderRight borderTop={index !== 0}/>)}

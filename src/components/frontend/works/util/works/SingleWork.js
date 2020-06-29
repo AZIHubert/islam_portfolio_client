@@ -6,8 +6,8 @@ import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
     container: {
-        padding: theme.spacing(4),
-        borderTop: props => props.borderTop ? `1px solid ${theme.palette.secondaryColor}` : '',
+        padding: theme.spacing(3),
+        borderTop: props => props.borderTop ? `${theme.custom.borderSize} solid ${theme.palette.secondaryColor}` : '',
         cursor: 'pointer',
         transition: theme.transitions.create('background-color', {
             duration: theme.transitions.duration.shorter,

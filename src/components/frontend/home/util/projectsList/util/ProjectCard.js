@@ -12,7 +12,10 @@ import {
 
 const useStyles = makeStyles(theme => ({
     container: {
-        height: 450,
+        minFeight: 650,
+        [theme.breakpoints.down('lg')]: {
+            minFeight: 450,
+        },
         borderLeft: props => props.first ? '' : `${theme.custom.borderSize} solid ${theme.palette.secondaryColor}`,
         transition: theme.transitions.create('background-color', {
             duration: theme.transitions.duration.short,
@@ -30,7 +33,7 @@ const useStyles = makeStyles(theme => ({
     },
     imageContainer: {
         width: '100%',
-        height: 300,
+        height: 450,
         [theme.breakpoints.down('lg')]: {
             height: 250,
         },
@@ -45,6 +48,7 @@ const useStyles = makeStyles(theme => ({
             duration: theme.transitions.duration.short,
             easing: theme.transitions.easing.easeInOut
         }),
+        paddingBottom: theme.spacing(5)
     }
 }))
 

@@ -12,9 +12,9 @@ import {DUMMY_GENERAL} from '../../../../../../dummy_datas/dummyDatas';
 
 const useStyles = makeStyles(theme => ({
     button: {
-        width: 130,
-        minWidth: 130,
-        height: 130,
+        width: 150,
+        minWidth: 150,
+        height: 150,
         marginBottom: -30,
         marginRight: 50,
         boxSizing: 'border-box',
